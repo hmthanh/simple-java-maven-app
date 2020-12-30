@@ -2,6 +2,6 @@
 # Package stage
 #
 FROM tomcat:8.0-alpine
-ADD target/WebApp.war /usr/local/tomcat/webapps/
-EXPOSE 8888
+ADD target/sample.war /usr/local/tomcat/webapps/
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
