@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>sample</finalName>
+    <finalName>ROOT</finalName>
   </build>
 </project>
