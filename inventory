@@ -1,3 +1,6 @@
+[all:vars]
+ansible_sudo_pass=051205
+
 [nodes]
-build ansible_ssh_host=192.168.229.134 ansible_ssh_port=22 ansible_user=hmthanh ansible_sudo_pass=051205
-deploy ansible_ssh_host=192.168.229.135 ansible_ssh_port=22 ansible_user=hmthanh ansible_sudo_pass=051205
+build ansible_ssh_host=192.168.229.134 ansible_ssh_port=22 ansible_user=hmthanh ansible_sudo_pass=051205 ansible_ssh_private_key_file=~/.ssh/id_rsa
+deploy ansible_ssh_host=192.168.229.135 ansible_ssh_port=22 ansible_user=hmthanh ansible_sudo_pass=051205 ansible_ssh_private_key_file=~/.ssh/id_rsa
