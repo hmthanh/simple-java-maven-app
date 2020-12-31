@@ -1,3 +1,3 @@
 [nodes]
-build ansible_ssh_host=192.168.229.134 ansible_user=hmthanh
-deploy ansible_ssh_host=192.168.229.135 ansible_user=hmthanh
+build ansible_ssh_host=192.168.229.134 ansible_ssh_port=22 ansible_user=hmthanh
+deploy ansible_ssh_host=192.168.229.135 ansible_ssh_port=22 ansible_user=hmthanh
