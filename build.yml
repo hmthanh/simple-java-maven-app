@@ -24,4 +24,3 @@
 
     - name: Push image to registry
       shell: docker push hostvars['build']['ansible_ssh_host']:5000/example
-0
