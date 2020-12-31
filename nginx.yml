@@ -1,11 +1,8 @@
 ---
-- hosts: local
-  connection: local
+- hosts: build
+  connection: build
   become: yes
-  become_user: root
+  become_user: hmthanh
   tasks: 
     - name: Install Nginx
-      apt:
-        name: nginx
-        state: installed
-        update_cache: true
+      shell: uptime
