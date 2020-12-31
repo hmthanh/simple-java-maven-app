@@ -11,10 +11,7 @@
     - name: Pull code from github
       git:
         repo: https://github.com/hmthanh/simple-java-maven-app.git
-        dest: /home/hmthanh/simple-java-maven-app
-
-    - name: Moving to respo
-      shell: cd simple-java-maven-app/
+        dest: /home/hmthanh
 
     - name: Run Maven in {{ mvn_home }}
       shell: mvn -Dmaven.test.failure.ignore clean package
