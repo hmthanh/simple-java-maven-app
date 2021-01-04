@@ -1,0 +1,23 @@
+---
+- name: Build server
+  hosts: build
+  become: yes
+  become_user: hmthanh
+
+  vars:
+    mvn_home: /usr/share/maven
+
+  tasks:
+    - name: Pull code from github
+      git:
+        repo: https://github.com/hmthanh/simple-java-maven-app.git
+        dest: /home/hmthanh/simple-java-maven-app
+
+    - name: Run Maven in {{ mvn_home }}
+      shell: mvn -f simple-java-maven-app/pom.xml  -Dmaven.test.failure.ignore clean package
+
+    - name: Create image
+      shell: docker build -t 192.168.229.134:5000/example /home/hmthanh/simple-java-maven-app/
+
+    - name: Push image to registry
+      shell: docker push 192.168.229.134:5000/example
