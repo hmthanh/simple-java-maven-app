@@ -12,4 +12,3 @@
       git:
         repo: git@github.com:hmthanh/simple-java-maven-app.git
         dest: /home/hmthanh/simple-java-maven-app
-
