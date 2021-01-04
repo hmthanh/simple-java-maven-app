@@ -10,7 +10,7 @@
   tasks:
     - name: Pull code from github
       git:
-        repo: https://github.com/hmthanh/simple-java-maven-app.git
+        repo: git@github.com:hmthanh/simple-java-maven-app.git
         dest: /home/hmthanh/simple-java-maven-app
 
     - name: Run Maven in {{ mvn_home }}
