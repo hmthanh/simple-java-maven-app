@@ -13,11 +13,3 @@
         repo: git@github.com:hmthanh/simple-java-maven-app.git
         dest: /home/hmthanh/simple-java-maven-app
 
-    - name: Run Maven in {{ mvn_home }}
-      shell: mvn -Dmaven.test.failure.ignore clean package
-
-    - name: Create image
-      shell: docker build -t hostvars['build']['ansible_ssh_host']:5000/example .
-
-    - name: Push image to registry
-      shell: docker push hostvars['build']['ansible_ssh_host']:5000/example
