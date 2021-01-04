@@ -1,0 +1,8 @@
+---
+- name: Demo site
+  hosts: build
+  become: yes
+  become_user: hmthanh
+  tasks: 
+    - name: Uptime
+      shell: uptime

@@ -1,6 +1,6 @@
 ---
-- name: Build server
-  hosts: build
+- name: Deploy server
+  hosts: deploy
   become: yes
   become_user: hmthanh
 
@@ -8,16 +8,8 @@
     mvn_home: /usr/share/maven
 
   tasks:
-    - name: Pull code from github
-      git:
-        repo: https://github.com/hmthanh/simple-java-maven-app.git
-        dest: /home/hmthanh/simple-java-maven-app
+    - name: Pull image from registry
+      shell: docker pull 192.168.229.134:5000/example
 
-    - name: Run Maven in {{ mvn_home }}
-      shell: mvn -f simple-java-maven-app/pom.xml  -Dmaven.test.failure.ignore clean package
-
-    - name: Create image
-      shell: docker build -t 192.168.229.134:5000/example /home/hmthanh/simple-java-maven-app/
-
-    - name: Push image to registry
-      shell: docker push 192.168.229.134:5000/example
+    - name: Run images
+      shell: docker run -d -p 8080:8080 192.168.229.134:5000/example
