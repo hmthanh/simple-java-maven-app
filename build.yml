@@ -17,7 +17,7 @@
       shell: mvn -f simple-java-maven-app/pom.xml  -Dmaven.test.failure.ignore clean package
 
     - name: Create image
-      shell: docker build -t hostvars['build']['ansible_ssh_host']:5000/example simple-java-maven-app/Dockerfile
+      shell: docker build -t hostvars['nodes']['build']['ansible_ssh_host']:5000/example simple-java-maven-app/Dockerfile
 
     - name: Push image to registry
-      shell: docker push hostvars['build']['ansible_ssh_host']:5000/example
+      shell: docker push hostvars['nodes']['build']['ansible_ssh_host']:5000/example
