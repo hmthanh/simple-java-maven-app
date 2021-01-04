@@ -2,7 +2,7 @@
 - name: Build server
   hosts: build
   become: yes
-  become_method: hmthanh
+  become_user: hmthanh
 
   vars:
     mvn_home: /usr/share/maven
